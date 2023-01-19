@@ -24,7 +24,12 @@ let displayContent = 0;
 let numbers = Array.from(document.querySelectorAll('.number'));
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
-        console.log(number.id);
         displayContent = display.textContent += number.id;
     });
 });
+
+//Add event listeners to operating buttons
+let clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+    display.textContent = undefined;
+})
