@@ -19,9 +19,12 @@ function operate(numbers, operator) {
 };
 
 //Add event listeners to number buttons, put numbers in display area
+let display = document.querySelector('.display');
+let displayContent = 0;
 let numbers = Array.from(document.querySelectorAll('.number'));
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
         console.log(number.id);
+        displayContent = display.textContent += number.id;
     });
 });
