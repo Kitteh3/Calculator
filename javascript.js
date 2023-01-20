@@ -14,23 +14,20 @@ let operations = {
     },
 }
 //Operate function
+let operator = undefined;
 function operate(numbers, operator) {
     return numbers.reduce(operations[operator]);
 };
 
 //Add event listeners to number buttons, put numbers in display area
 let display = document.querySelector('.display');
-let displayContent = 0;
-let currentValue = displayContent;
+let displayContent = undefined;
+display.textContent = displayContent;
 const nums = [];
 let numbers = Array.from(document.querySelectorAll('.number'));
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
-        if (nums.length >= 1) {
-            display.textContent = undefined;
-        }
         displayContent = display.textContent += number.id;
-        currentValue = displayContent;
     });
 });
 
@@ -40,10 +37,21 @@ clear.addEventListener('click', () => {
     display.textContent = undefined;
     nums.length = 0;
 });
+
+let equals = document.querySelector('#equals');
+equals.addEventListener('click', () => {
+    nums.push(displayContent);
+    display.textContent = operate(nums, operator);
+    displayContent = display.textContent;
+    nums[0] = displayContent;
+    nums.pop();
+});
+
  let dividedBy = document.querySelector('#divide');
  dividedBy.addEventListener('click', () => {
-    nums.push(currentValue);
-    if (nums.length > 1) {
-        currentValue = operate(nums, '/');
-    }
+    nums.shift();
+    nums.push(displayContent);
+    operator = '/';
+    display.textContent = undefined;
+
 })
