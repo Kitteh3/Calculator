@@ -15,16 +15,8 @@ let operations = {
         return a / b;
     },
 };
-//Operate functions
-//function for operator button click
+//Operate function
 let operator = undefined;
-/*function updateArray(nums, operator) {
-    nums.push(displayContent);
-    display.textContent = undefined
-    currentTotal = operate(nums, operator);
-    //nums.length = 0;
-    //nums.push(currentTotal);
-};*/
 
 function operate(numbers, operator) {
     return numbers.reduce(operations[operator]);
@@ -57,6 +49,7 @@ let clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
     display.textContent = undefined;
     nums.length = 0;
+    operands.length = 0;
     total.textContent = undefined;
 });
 
@@ -66,9 +59,8 @@ equals.addEventListener('click', () => {
     total.textContent = operate(operands, operator);
     display.textContent = undefined;
     currentTotal = total.textContent;
-    operands[0] = Number(currentTotal);
-    nums.pop();
-    operands.pop();
+    nums[0] = Number(currentTotal);
+    operands.length = 0;
     console.log(currentTotal);
     console.log(nums);
     console.log(operands);
