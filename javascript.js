@@ -15,8 +15,17 @@ let operations = {
         return a / b;
     },
 };
-//Operate function
+//Operate functions
+//function for operator button click
 let operator = undefined;
+/*function updateArray(nums, operator) {
+    nums.push(displayContent);
+    display.textContent = undefined
+    currentTotal = operate(nums, operator);
+    //nums.length = 0;
+    //nums.push(currentTotal);
+};*/
+
 function operate(numbers, operator) {
     return numbers.reduce(operations[operator]);
 };
@@ -26,6 +35,7 @@ let display = document.querySelector('.display');
 let displayContent = undefined;
 display.textContent = displayContent;
 const nums = [];
+const operands = [];
 let currentTotal = undefined;
 
 //current total display
@@ -36,6 +46,9 @@ let numbers = Array.from(document.querySelectorAll('.number'));
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
         displayContent = Number(display.textContent+= number.id);
+        nums.shift();
+        nums.push(displayContent);
+        console.log(nums);
     });
 });
 
@@ -49,68 +62,82 @@ clear.addEventListener('click', () => {
 
 let equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    nums.push(displayContent);
-    total.textContent = operate(nums, operator);
-    //displayContent = display.textContent;
+    operands.push(nums[0]);
+    total.textContent = operate(operands, operator);
+    display.textContent = undefined;
     currentTotal = total.textContent;
-    nums[0] = currentTotal;
+    operands[0] = Number(currentTotal);
     nums.pop();
+    operands.pop();
+    console.log(currentTotal);
+    console.log(nums);
+    console.log(operands);
 });
 
  let dividedBy = document.querySelector('#divide');
  dividedBy.addEventListener('click', () => {
-    if (nums.length >= 2) {
-        currentTotal = operate(nums, operator);
-        nums.length = 0;
-        nums.push(currentTotal);
+    operands.push(nums[0]);
+    console.log(operands);
+    if (operands.length >= 2) {
+        currentTotal = operate(operands, operator);
+        total.textContent = currentTotal;
+        operands.length = 0;
+        operands.push(currentTotal);
     };
-    //nums.push(displayContent);
     operator = '/';
     display.textContent = undefined;
-    //if (nums.length === 2) {
-    //    currentTotal = operate(nums, operator);
-    //}
-    console.log(nums);
+    total.textContent = operands[0];
+    console.log(operands);
+    console.log(currentTotal);
 });
 
 let multipliedBy = document.querySelector('#multiply');
 multipliedBy.addEventListener('click', () => {
-    if (nums.length >= 2) {
-        currentTotal = operate(nums, operator);
-        nums.length = 0;
-        nums.push(currentTotal);
+    operands.push(nums[0]);
+    console.log(operands);
+    if (operands.length >= 2) {
+        currentTotal = operate(operands, operator);
+        total.textContent = currentTotal;
+        operands.length = 0;
+        operands.push(currentTotal);
     };
-   nums.push(displayContent);
     operator = '*';
     display.textContent = undefined;
-    console.log(nums);
+    total.textContent = operands[0];
+    console.log(operands);
+    console.log(currentTotal);
 });
 
 let minus = document.querySelector('#minus');
 minus.addEventListener('click', () => {
-    if (nums.length >= 2) {
-        currentTotal = operate(nums, operator);
-        nums.length = 0;
-        nums.push(currentTotal);
+    operands.push(nums[0]);
+    console.log(operands);
+    if (operands.length >= 2) {
+        currentTotal = operate(operands, operator);
+        total.textContent = currentTotal;
+        operands.length = 0;
+        operands.push(currentTotal);
     };
-    nums.push(displayContent);
     operator = '-';
     display.textContent = undefined;
-    console.log(nums);
+    total.textContent = operands[0];
+    console.log(operands);
+    console.log(currentTotal);
 });
 
 let plus = document.querySelector('#plus');
 plus.addEventListener('click', () => {
-    if (nums.length >= 1) {
-        currentTotal = operate(nums, operator);
-        nums.length = 0;
-        nums.push(currentTotal);
+    operands.push(nums[0]);
+    console.log(operands);
+    if (operands.length >= 2) {
+        currentTotal = operate(operands, operator);
         total.textContent = currentTotal;
-        console.log(currentTotal);
+        operands.length = 0;
+        operands.push(currentTotal);
     };
-    nums.push(displayContent);
     operator = '+';
-    //currentTotal = nums[0];
     display.textContent = undefined;
-    console.log(nums);
-});
+    total.textContent = operands[0];
+    console.log(operands);
+    console.log(currentTotal);
+})
