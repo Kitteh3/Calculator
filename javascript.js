@@ -44,6 +44,18 @@ numbers.forEach((number) => {
     });
 });
 
+//Decimals, floating point numbers
+let decimal = document.querySelector('#decimal');
+decimal.addEventListener('click', () => {
+    if (nums.lenth === 0) {
+        nums[0] = 0;
+        display.textContent = 0;
+    };
+    displayContent = display.textContent += decimal.textContent;
+    //nums.push(displayContent);
+    console.log(nums);
+})
+
 //Add event listeners to operating buttons
 let clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
