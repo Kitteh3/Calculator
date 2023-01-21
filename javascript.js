@@ -19,7 +19,7 @@ let operations = {
 let operator = undefined;
 
 function operate(numbers, operator) {
-    return numbers.reduce(operations[operator]);
+    return Math.round(1000 * (numbers.reduce(operations[operator]))) / 1000;
 };
 
 //Add event listeners to number buttons, put numbers in display area
@@ -63,6 +63,7 @@ clear.addEventListener('click', () => {
     nums.length = 0;
     operands.length = 0;
     total.textContent = undefined;
+    currentTotal = undefined;
 });
 
 let equals = document.querySelector('#equals');
