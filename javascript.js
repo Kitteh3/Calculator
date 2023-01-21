@@ -83,6 +83,10 @@ clear.addEventListener('click', () => {
 let equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     operands.push(nums[0]);
+    if (operands.length === 1) {
+        operands[1] = 0;
+        operator = '+';
+    }
     total.textContent = operate(operands, operator);
     display.textContent = undefined;
     currentTotal = total.textContent;
