@@ -12,7 +12,11 @@ let operations = {
         return a * b;
     },
     "/" : function(a, b) {
-        return a / b;
+        if (b === 0) {
+            return "NOPE.";
+        } else {
+            return a / b;
+        };
     },
 };
 //Operate function
