@@ -1,5 +1,5 @@
 #title {
-    color: #0c0a3e;
+    color: #ffffff;
     font-family: lieberuth, sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -8,14 +8,98 @@
 }
 
 body {
-    background-color: #f3c677;
+    background-color: #cbf3f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
 }
 
 .calculator {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
     width: 400px;
     height: 550px;
+}
+
+.total,
+.display {
+    display: flex;
+    justify-content: end;
+    height: 25px;
+    padding: 10px;
+    background-color: #cbf3f0;
+    width: 300px;
+    font-family: lieberuth, sans-serif;
+    font-style: normal;
+}
+
+.total {
+    color: #f9564f;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.display {
+    color: #b33f62;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    height: 75px;
+    width: 75px;
+    border-radius: 0%;
+    border: none;
+    margin: 2px;
+}
+
+.rowA,
+.rowB,
+.rowC,
+.rowD,
+.rowE {
+    display: flex;
+}
+
+#equals {
+    width: 154px;
+}
+
+#clear,
+#back {
+    background-color: #f9564f;
+    color: #cbf3f0;
+    font-family: lieberuth, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+
+}
+
+.operator {
+    background-color: #b33f62;
+    color: #cbf3f0;
+    font-family: lieberuth, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.number,
+#decimal {
+    background-color: #f3c677;
+    color: #b33f62;
+    font-family: lieberuth, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
 }
