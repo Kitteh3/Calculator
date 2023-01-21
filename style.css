@@ -1,0 +1,21 @@
+#title {
+    color: #0c0a3e;
+    font-family: lieberuth, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+
+}
+
+body {
+    background-color: #f3c677;
+}
+
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 400px;
+    height: 550px;
+}

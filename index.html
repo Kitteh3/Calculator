@@ -3,40 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/vdt7bse.css">
     </head>
     <body>
-        <h1>Calculator</h1>
-        <div class="total"></div>
-        <div class="display"></div>
-        <div class="buttons">
-            <div class="rowA">
-                <button id="clear">clear</button>
-                <button id="back">back</button>
-                <button class="operator" id="powerOf">x<sup>1</sup></button>
-                <button class="operator" id="divide">/</button>
-            </div>
-            <div class="rowB">
-                <button class="number" id="7">7</button>
-                <button class="number" id="8">8</button>
-                <button class="number" id="9">9</button>
-                <button class="operator" id="multiply">x</button>
-            </div>
-            <div class="rowC">
-                <button class="number" id="4">4</button>
-                <button class="number" id="5">5</button>
-                <button class="number" id="6">6</button>
-                <button class="operator" id="minus">-</button>
-            </div>
-            <div class="rowD">
-                <button class="number" id="1">1</button>
-                <button class="number" id="2">2</button>
-                <button class="number" id="3">3</button>
-                <button class="operator" id="plus">+</button>
-            </div>
-            <div class="rowE">
-                <button class="number" id="0">0</button>
-                <button id="decimal">.</button>
-                <button class="operator" id="equals">=</button>
+        <h1 id="title">calculator</h1>
+        <div class="calculator">
+            <div class="total"></div>
+            <div class="display"></div>
+            <div class="buttons">
+                <div class="rowA">
+                    <button id="clear">clear</button>
+                    <button id="back">back</button>
+                    <button class="operator" id="powerOf">x<sup>1</sup></button>
+                    <button class="operator" id="divide">/</button>
+                </div>
+                <div class="rowB">
+                    <button class="number" id="7">7</button>
+                    <button class="number" id="8">8</button>
+                    <button class="number" id="9">9</button>
+                    <button class="operator" id="multiply">x</button>
+                </div>
+                <div class="rowC">
+                    <button class="number" id="4">4</button>
+                    <button class="number" id="5">5</button>
+                    <button class="number" id="6">6</button>
+                    <button class="operator" id="minus">-</button>
+                </div>
+                <div class="rowD">
+                    <button class="number" id="1">1</button>
+                    <button class="number" id="2">2</button>
+                    <button class="number" id="3">3</button>
+                    <button class="operator" id="plus">+</button>
+                </div>
+                <div class="rowE">
+                    <button class="number" id="0">0</button>
+                    <button id="decimal">.</button>
+                    <button class="operator"    id="equals">=</button>
+                </div>
             </div>
         </div>
         <script src="javascript.js"></script>
