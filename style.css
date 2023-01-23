@@ -1,7 +1,7 @@
 #title {
     color: #0c0a3e;
     font-family: lieberuth, sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
     text-align: center;
 
@@ -119,4 +119,29 @@ button {
 .number:active,
 #decimal:active {
     background-color: #b59153;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    color: #0c0a3e;
+    font-family: lieberuth, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+}
+
+a {
+    color: #f9564f;
+    font-family: lieberuth, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px; 
+}
+
+a:hover {
+    color: #0c0a3e;
 }
