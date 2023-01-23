@@ -66,6 +66,7 @@ button {
     border-radius: 0%;
     border: none;
     margin: 2px;
+    cursor: pointer;
 }
 
 .rowA,
@@ -90,6 +91,10 @@ button {
     font-size: 24px;
 
 }
+#clear:active,
+#back:active {
+    background-color: #b13a36;
+}
 
 .operator {
     background-color: #b33f62;
@@ -98,6 +103,9 @@ button {
     font-weight: 500;
     font-style: normal;
     font-size: 24px;
+}
+.operator:active {
+    background-color: #76263e;
 }
 
 .number,
@@ -108,4 +116,8 @@ button {
     font-weight: 500;
     font-style: normal;
     font-size: 24px;
+}
+.number:active,
+#decimal:active {
+    background-color: #b59153;
 }
