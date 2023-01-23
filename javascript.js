@@ -83,6 +83,7 @@ clear.addEventListener('click', () => {
     currentTotal = undefined;
 });
 
+
 let equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     operands.push(nums[0]);

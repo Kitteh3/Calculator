@@ -77,12 +77,12 @@ button {
     display: flex;
 }
 
-#equals {
+#equals,
+#clear {
     width: 154px;
 }
 
-#clear,
-#back {
+#clear {
     background-color: #f9564f;
     color: #cbf3f0;
     font-family: lieberuth, sans-serif;
@@ -91,8 +91,7 @@ button {
     font-size: 24px;
 
 }
-#clear:active,
-#back:active {
+#clear:active {
     background-color: #b13a36;
 }
 
