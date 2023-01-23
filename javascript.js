@@ -18,6 +18,9 @@ let operations = {
             return a / b;
         };
     },
+    "pow" : function(a, b) {
+        return Math.pow(a, b);
+    },
 };
 //Operate function
 let operator = undefined;
@@ -95,6 +98,23 @@ equals.addEventListener('click', () => {
     console.log(currentTotal);
     console.log(nums);
     console.log(operands);
+});
+
+let powerOf = document.querySelector('#powerOf');
+powerOf.addEventListener('click', () => {
+    operands.push(nums[0]);
+    console.log(operands);
+    if (operands.length >= 2) {
+        currentTotal = operate(operands, operator);
+        total.textContent = currentTotal;
+        operands.length = 0;
+        operands.push(currentTotal);
+    };
+    operator = 'pow';
+    display.textContent = undefined;
+    total.textContent = operands[0];
+    console.log(operands);
+    console.log(currentTotal);
 });
 
  let dividedBy = document.querySelector('#divide');
